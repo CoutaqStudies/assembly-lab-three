@@ -16,6 +16,25 @@ Ones    db      ?
 
 MAIN    proc    near
 ; ---------------- Мои команды ---------------------------------
+;находим Х
+        mov ax, 1500
+        mov bx, 10
+        div bx; 1500/10
+        mov date, ax 
+        
+        mov ax, 3
+        add ax, 152
+        sub ax, date ; 3+152-1500/10
+        
+        mov bx, 14
+        mul bx ; 14*(...)
+        
+        sub ax, 20
+        add ax, 225
+
+        mov date, ax
+        call    DISP
+; находим у
         mov bl, 145
         sub bl, 125
         mov al, 2
@@ -29,7 +48,7 @@ MAIN    proc    near
         mov date2, ax        
         mov ax, date
         mul date2
-        mov date2, dx:ax
+        mov date2, ax
 
         mov ax, 945
         add ax, 275
@@ -41,7 +60,7 @@ MAIN    proc    near
         mov bx, date2
         mul bx
         
-        mov date, dx:ax
+        mov date, ax
 
        
         call    DISP
